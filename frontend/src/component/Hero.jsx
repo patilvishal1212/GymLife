@@ -9,17 +9,17 @@ import hero2 from "../assets/hero-bgs.jpg";
 
 const Hero = () => {
   return (
-    <section className="h-screen">
+    <section className="h-[170vh]">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop={true}
-        className="h-full"
+        className="h-[170vh]"
       >
         {[hero1, hero2].map((img, index) => (
           <SwiperSlide key={index}>
             <div
-              className="h-screen bg-cover bg-center flex items-center justify-end pr-16"
+              className="h-[170vh] bg-cover bg-center flex items-center justify-end pr-16"
               style={{ backgroundImage: `url(${img})` }}
             >
               <div className="absolute inset-0 bg-opacity-70"></div>

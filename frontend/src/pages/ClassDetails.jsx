@@ -8,40 +8,21 @@ import GetInTouch from "../component/GetInTouch";
 
 const ClassDetails = () => {
   return (
-    <div className="font-muli text-gray-800 bg-black">
-      {/* Header */}
-      <header className="bg-black text-white py-4">
-        <div className="container mx-auto flex justify-between items-center px-4">
-          <div className="flex items-center space-x-3">
-            <img src={Logo} alt="Gym Logo" className="h-10 w-auto" />
-            <h1 className="text-2xl font-oswald font-bold uppercase">
-              Gym Center
-            </h1>
-          </div>
-          <nav>
-            <ul className="hidden md:flex space-x-8 text-sm font-semibold uppercase">
-              <li><a href="/" className="hover:text-red-500">Home</a></li>
-              <li><a href="/about" className="hover:text-red-500">About</a></li>
-              <li><a href="/classes" className="text-red-500">Classes</a></li>
-              <li><a href="/services" className="hover:text-red-500">Services</a></li>
-              <li><a href="/team" className="hover:text-red-500">Team</a></li>
-              <li><a href="/contact" className="hover:text-red-500">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
+    <div className="font-muli text-gray-500 bg-black">
+     
+      
       {/* Breadcrumb */}
       <section
-        className="bg-cover bg-center py-20 text-center text-white" 
+        className="relative bg-cover bg-center py-24 text-center h-[90vh] text-white" 
         style={{ backgroundImage: `url(${BreadcrumbBg})` }}
       >
-        <h2 className="text-4xl font-oswald uppercase font-bold">
+        <h2 className="text-6xl font-bold uppercase mb-2 mt-35">
           Classes Detail
         </h2>
         <div className="text-sm mt-2">
-          <a href="/" className="text-red-400 hover:text-white">Home</a> /{" "}
-          <span className="text-gray-300">Body Building</span>
+          <a href="/" className="text-2xl">Home</a> /{" "}
+          <span className="text-2xl">Classes</span> /{" "}
+          <span className="text-orange-500 text-2xl">Body Building</span>
         </div>
       </section>
 
@@ -104,9 +85,9 @@ const ClassDetails = () => {
 
         {/* Sidebar */}
         <div>
-          <div className="bg-gray-100 p-6 rounded-lg shadow">
-            <h5 className="font-bold text-xl border-b pb-2 mb-4">Categories</h5>
-            <ul className="space-y-2 text-gray-700">
+          <div className=" ">
+            <h5 className="font-bold text-xl border-b pb-2 mb-4 text-white">Categories</h5>
+            <ul className="space-y-2 text-gray-500">
               {["Yoga", "Running", "Weightloss", "Cardio", "Body Building", "Nutrition"].map((cat, i) => (
                 <li key={i} className="flex justify-between hover:text-red-500">
                   <span>{cat}</span>{" "}

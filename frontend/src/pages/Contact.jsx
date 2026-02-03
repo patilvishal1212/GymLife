@@ -1,27 +1,50 @@
-import React from "react";
-// import Breadcrumb from "../components/Breadcrumb"; // optional if you want a breadcrumb section
+import React, { useState } from "react";
 import mapImage from "../assets/breadcrumb-bg.jpg";
 import Footer from "../component/Footer";
 import GetInTouch from "../component/GetInTouch";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    website: "",
+    comment: "",
+  });
+
+  
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+  };
+
   return (
     <div className="bg-black text-white">
       {/* Breadcrumb */}
       <section
-        className="bg-cover bg-center py-28 relative"
+        className="relative bg-cover bg-center py-24 text-center h-[90vh]"
         style={{ backgroundImage: `url(${mapImage})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10 text-center">
-          <h2 className="text-5xl font-bold text-orange-500">Contact Us</h2>
-
+        <div className="relative z-10 mt-25">
+          <h2 className="text-5xl font-bold uppercase mb-2">Contact Us</h2>
+          <p className="text-white mt-5">
+            <a href="/" className="text-2xl">Home</a> /
+            <samp className="text-orange-500 text-2xl"> Contact-Us</samp>
+          </p>
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="py-20 px-6 lg:px-20">
         <div className="grid md:grid-cols-2 gap-12 items-start">
+          
           {/* Left Side - Contact Info */}
           <div>
             <h2 className="text-4xl font-bold text-orange-500 mb-6">
@@ -48,30 +71,42 @@ const Contact = () => {
 
           {/* Right Side - Contact Form */}
           <div className="bg-neutral-900 p-8 rounded-2xl shadow-lg">
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
               <input
                 type="text"
+                name="website"
                 placeholder="Website"
+                value={formData.website}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
               <textarea
+                name="comment"
                 placeholder="Comment"
                 rows="4"
+                value={formData.comment}
+                onChange={handleChange}
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
               ></textarea>
               <button
                 type="submit"
-                className="bg-orange-500 hover:bg-orange-600 transition-all w-full py-3 rounded-lg font-semibold text-white"
+                className="bg-orange-500 hover:bg-orange-600 transition-all w-[15rem] py-3 rounded-lg font-semibold text-white ml-24"
               >
                 Submit
               </button>
@@ -92,8 +127,8 @@ const Contact = () => {
         </div>
       </section>
 
-      <GetInTouch/>
-      <Footer/>
+      <GetInTouch />
+      <Footer />
     </div>
   );
 };

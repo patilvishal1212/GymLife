@@ -4,6 +4,7 @@ import c2 from "../assets/classes/class-2.jpg";
 import c3 from "../assets/classes/class-3.jpg";
 import c4 from "../assets/classes/class-4.jpg";
 import c5 from "../assets/classes/class-5.jpg";
+import c6 from "../assets/classes/class-details/class-detailsl.jpg";
 
 export default function Classes(){
   const cls = [
@@ -12,13 +13,14 @@ export default function Classes(){
     { img: c3, tag: "STRENGTH", title: "Kettlebell power" },
     { img: c4, tag: "CARDIO", title: "Indoor cycling" },
     { img: c5, tag: "TRAINING", title: "Boxing" },
+    { img: c6, tag: "TRAINING", title: "Boxing" },
   ];
 
   return (
     <section className="py-16 bg-black ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <span className="text-sm text-orange-500">Our Classes</span>
+          <span className=" text-orange-500 text-2xl font-bold">Our Classes</span>
           <h2 className="text-3xl font-bold text-white">WHAT WE CAN OFFER</h2>
         </div>
 

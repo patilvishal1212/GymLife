@@ -1,7 +1,6 @@
 import React from "react";
 import breadcrumbBg from "../assets/breadcrumb-bg.jpg";
 import aboutImg from "../assets/about-us.jpg";
-import bannerBg from "../assets/banner-bg.jpg";
 import team1 from "../assets/team/team-1.jpg";
 import team2 from "../assets/team/team-2.jpg";
 import team3 from "../assets/team/team-3.jpg";
@@ -9,23 +8,24 @@ import testimonial1 from "../assets/testimonial/testimonial-1.jpg";
 import testimonial2 from "../assets/testimonial/testimonial-2.jpg";
 import Footer from "../component/Footer";
 import GetInTouch from "../component/GetInTouch";
+import Banner from "../component/Banner";
 
 const About = () => {
   return (
     <div className="text-gray-100 bg-black">
       {/* Breadcrumb Section */}
       <section
-        className="relative bg-cover bg-center py-24 text-center"
+        className="relative bg-cover bg-center py-24 text-center h-[90vh]"
         style={{ backgroundImage: `url(${breadcrumbBg})` }}
       >
-        <div className="bg-black/60 absolute inset-0" />
-        <div className="relative z-10">
-          <h2 className="text-4xl font-bold uppercase mb-2">About Us</h2>
-          <p className="text-gray-300">
-            <a href="/" className="hover:text-red-500">
+        {/* <div className="bg-black/60 absolute inset-0" /> */}
+        <div className="relative z-10 mt-25">
+          <h2 className="text-5xl font-bold uppercase mb-2">About Us</h2>
+          <p className="text-white mt-5">
+            <a href="/" className="text-2xl">
               Home
             </a>{" "}
-            / About
+            /<samp className="text-orange-500 text-2xl"> About</samp>
           </p>
         </div>
       </section>
@@ -33,7 +33,7 @@ const About = () => {
       {/* Why Choose Us */}
       <section className="py-20 bg-black text-center">
         <div className="container mx-auto">
-          <h3 className="text-red-500 uppercase tracking-widest text-sm">
+          <h3 className="text-red-500 uppercase tracking-widest text-2xl">
             Why Choose Us?
           </h3>
           <h2 className="text-4xl font-bold mt-2 mb-10">
@@ -57,6 +57,7 @@ const About = () => {
                 title: "Unique to your needs",
                 text: "Risus commodo viverra maecenas accumsan lacus vel facilisis.",
               },
+              
             ].map((item, idx) => (
               <div key={idx} className="bg-neutral-900 p-6 rounded-xl shadow-lg">
                 <h4 className="text-xl font-semibold mb-2 text-red-500">
@@ -118,12 +119,12 @@ const About = () => {
       {/* Team Section */}
       <section className="py-20 bg-black text-center">
         <div className="container mx-auto px-6">
-          <h3 className="text-red-500 uppercase tracking-widest text-sm mb-2">
+          <h3 className="text-red-500 uppercase tracking-widest text-md text-left mb-2">
             Our Team
           </h3>
-          <h2 className="text-4xl font-bold mb-10">TRAIN WITH EXPERTS</h2>
+          <h2 className="text-4xl font-bold mb-10 text-left">TRAIN WITH EXPERTS</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[team1, team2, team3].map((member, idx) => (
+            {[team1, team2, team3, team1, team2, team3].map((member, idx) => (
               <div
                 key={idx}
                 className="relative group overflow-hidden rounded-2xl"
@@ -144,27 +145,11 @@ const About = () => {
       </section>
 
       {/* Banner Section */}
-      <section
-        className="relative bg-cover bg-center text-center py-24"
-        style={{ backgroundImage: `url(${bannerBg})` }}
-      >
-        <div className="bg-black/60 absolute inset-0" />
-        <div className="relative z-10">
-          <h2 className="text-4xl font-bold uppercase mb-4">
-            Register now to get more deals
-          </h2>
-          <p className="text-gray-300 mb-6">
-            Where health, beauty and fitness meet.
-          </p>
-          <button className="bg-red-500 px-8 py-3 rounded-lg hover:bg-red-600 transition">
-            Appointment
-          </button>
-        </div>
-      </section>
+      <Banner/>
 
       {/* Testimonials */}
       <section className="py-20 bg-neutral-950 text-center">
-        <h3 className="text-red-500 uppercase tracking-widest text-sm mb-2">
+        <h3 className="text-red-500 uppercase tracking-widest font-semibold text-2xl mb-2">
           Testimonial
         </h3>
         <h2 className="text-4xl font-bold mb-10">Our Clients Say</h2>
